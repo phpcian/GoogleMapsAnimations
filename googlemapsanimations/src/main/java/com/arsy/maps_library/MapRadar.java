@@ -67,6 +67,7 @@ public class MapRadar {
     private int colors[] = {Color.parseColor("#0038728f"), Color.parseColor("#ff38728f")};    //sweep animation colors
 
     public MapRadar(GoogleMap googleMap, LatLng latLng, Context context) {
+        System.gc();//Garbage collect here to avoid java.lang.OutOfMemoryError in some devices.
         this.googleMap = googleMap;
         this.latLng = latLng;
         this.prevlatlng = latLng;
